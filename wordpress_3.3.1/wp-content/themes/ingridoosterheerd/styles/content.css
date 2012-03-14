@@ -18,9 +18,10 @@ input{font-size: 80%;}
 .itemhead {
     padding: 0 0 5px 0;
     width: 100%;
-    height: 30px;
-    background-image: url('../images/title-line.png');
-    background-repeat: repeat-x;
+    height: 25px;
+/*    background-image: url('../images/title-line1.png');
+    background-repeat: repeat-x;*/
+    background: url('../images/logo-small1.png') no-repeat right, url('../images/title-line1.png') repeat-x;
     overflow: hidden;
 }
 

@@ -20,6 +20,13 @@ body{
     text-align: left;
 }
 
+.ito-main-content-sidebar-1 {
+    position: relative;
+    min-height: 400px;   
+    height: auto;
+    text-align: left;
+}
+
 .ito-content {
     position: relative;
     width: 66%;

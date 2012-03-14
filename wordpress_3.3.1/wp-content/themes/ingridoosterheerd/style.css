@@ -22,15 +22,26 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
 @import url('styles/work-slide-preview.css');
 
 .div-shadow {
-    -moz-box-shadow: 7px 7px 5px #CCCCCC;
+/*    -moz-box-shadow: 7px 7px 5px #CCCCCC;
     -webkit-box-shadow: 7px 7px 5px #CCCCCC;
     box-shadow: 7px 7px 5px #CCCCCC;
-    /* Voor IE 8 */  
+     Voor IE 8   
     -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";  
-    /* Voor IE 5.5 - 7 */  
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');  
+     Voor IE 5.5 - 7   
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');  */
+
+-moz-box-shadow: 0 0 7px 5px #CCCCCC;
+-webkit-box-shadow: 0 0 7px 5px #CCCCCC;
+box-shadow: 0 0 7px 5px #CCCCCC;
+/*Voor IE 8   */
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=135, Color='#CCCCCC')";  
+/*Voor IE 5.5 - 7   */
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction-135,  Color='#CCCCCC');
+
+
 
 }
+
 
 .metadata{
     line-height: 190%;

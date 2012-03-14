@@ -2,16 +2,16 @@
     <div class="logo">
         <table>
             <tr>
-                <td>Ingrid Oosterheerd</td>
-                <td><span>t</span> 020 4404 730</td>
+                <td><?php if (function_exists('contact_detail')) { contact_detail('name'); }?></td>
+                <td><span>t&nbsp;</span><?php if (function_exists('contact_detail')) { contact_detail('phone'); }?></td>
             </tr>
             <tr>
-                <td><span>Aldendriel 2 III</span></td>
-                <td><span>m</span> 06 15600 306</td>
+                <td><span><?php if (function_exists('contact_detail')) { contact_detail('address'); }?></span></td>
+                <td><span>m&nbsp;</span><?php if (function_exists('contact_detail')) { contact_detail('mobile'); }?></td>
             </tr>
             <tr>
-                <td><span>1083 BL Amsterdam</span></td>
-                <td><span>e</span> oosterh@xsall.nl</td>
+                <td><span><?php if (function_exists('contact_detail')) { contact_detail('woonplaats'); }?></span></td>
+                <td><span>e&nbsp;</span><?php if (function_exists('contact_detail')) { contact_detail('email'); }?></td>
             </tr>
         </table> 
     </div>
