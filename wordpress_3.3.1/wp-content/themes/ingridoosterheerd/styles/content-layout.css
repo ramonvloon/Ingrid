@@ -13,14 +13,14 @@ body{
     margin: 0 auto 0 auto;
 }
 
-.ito-main-content-sidebar {
+.ito-main-content-sidebar-1 {
     position: relative;
     min-height: 400px;   
     height: auto;
     text-align: left;
 }
 
-.ito-main-content-sidebar-1 {
+.ito-main-content-sidebar {
     position: relative;
     min-height: 400px;   
     height: auto;
@@ -31,7 +31,7 @@ body{
     position: relative;
     width: 66%;
     height: auto;
-    min-height: 200px;
+    min-height: 500px;
     margin: 14px;
     float: left;
 }

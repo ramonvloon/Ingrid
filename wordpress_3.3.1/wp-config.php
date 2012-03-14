@@ -22,7 +22,7 @@ define('DB_NAME', 'Ingrid');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'wachtwoord');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -79,7 +79,7 @@ define('WPLANG', '');
  * in their development environments.
  */
 define('WP_DEBUG', false);
-
+define('WP_ALLOW_MULTISITE', true);
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
