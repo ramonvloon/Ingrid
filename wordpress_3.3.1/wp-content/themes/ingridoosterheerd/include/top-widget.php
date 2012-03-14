@@ -1,14 +1,20 @@
-<div class="top-widget">
-    <div class="ito-search-laguage">
-        <div class="ito-search">
-            <?php if (!dynamic_sidebar('search')) { ?>             
-                <form id="searchform" method="get" action="<?php bloginfo('home'); ?>">
-                    <input type="text" name="s" id="s" value="" size="13" />
-                </form>
-            <?php } ?>
-        </div>
-        <div class="ito-language">
-            <ul><?php pll_the_languages(); ?></ul>
+<?php if (is_sidebar_active('top_widget_area')) : ?>           
+    <div class="top-widget">
+        <div class="ito-search-language">
+            <div class="ito-search">
+                <?php
+                if (dynamic_sidebar('top_widget_area')) {
+                    if (is_active_widget('polylang')) {
+                        echo "hoi";
+                    }
+                }
+                ?>
+            </div>
         </div>
     </div>
-</div>
+<?php endif; ?>
+<!--    <div id="top" class="widget-area">            
+        <ul class="xoxo">                
+<?php dynamic_sidebar('top_widget_area'); ?>            
+        </ul>
+    </div> #secondary .widget-area -->

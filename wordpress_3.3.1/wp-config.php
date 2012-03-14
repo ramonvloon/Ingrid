@@ -16,7 +16,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'wordpress3.3.1_v1');
+define('DB_NAME', 'Ingrid');
 
 /** MySQL database username */
 define('DB_USER', 'root');

@@ -658,8 +658,8 @@ class Polylang_Core extends Polylang_base {
 			'echo' => 1, // echoes the list
 			'hide_if_empty' => 1, // hides languages with no posts (or pages)
 			'menu' => '0', // not for nav menu
-			'show_flags' => 0, // don't show flags
-			'show_names' => 1, // show language names
+			'show_flags' => 1, // don't show flags
+			'show_names' => 0, // show language names
 			'force_home' => 0, // tries to find a translation (available only if display != dropdown)
 			'hide_if_no_translation' => 0, // don't hide the link if there is no translation
 			'hide_current' => 0, // don't hide current language

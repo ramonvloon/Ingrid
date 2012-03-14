@@ -1,0 +1,76 @@
+.top-widget {
+    width: 100%;
+    height: 30px;
+    border: 1px black solid;
+}
+
+.ito-navset { 
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.ito-language { 
+    float: right;
+    margin: 10px 10px 0 0;
+}
+
+.ito-nav-bar-search {
+    width: 70%;
+    height: 60px;
+    background: #E95E27;
+    overflow: hidden;
+}
+
+.ito-nav-ul li a {
+    float: left;
+    padding-left: 40px;
+    text-decoration: none;
+    color: #000;
+}
+
+.ito-nav-ul li a:hover{color: #fff;}
+
+.ito-nav-bar {
+    width: 100%;
+    height: 60px;
+    margin: 32px 0 0 0;
+}
+
+.ito-search-laguage {
+    text-align: left;
+    float: right;
+    width: 180px;
+    height: 60px;  
+}
+
+.ito-search input {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #E95E27;
+    width: 120px;
+    margin: 30px 0 0 0; 
+}
+
+.logo {
+    text-align: left;
+    width: 29.7%;
+    height: 58px;
+    float: right;
+    background-color: #fff;
+    border: 1px solid #E92E27;
+}
+
+.logo table {
+    margin: 5px 0 0 10px;
+}
+
+.logo table td {
+    width: 120px;
+}
+
+.logo span {
+    color: #E92E27;
+}
+    
+

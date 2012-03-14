@@ -34,14 +34,21 @@ function theme_widgets_init() {
         'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
         'after_widget' => "</li>", 'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',));
+// Top Area
+    register_sidebar(array(
+        'name' => 'Top Widget Area',
+        'id' => 'top_widget_area',
+        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+        'after_widget' => "</li>", 'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',));
 }
-
 // end theme_widgets_init 
 add_action('init', 'theme_widgets_init');
 
 $preset_widgets = array(
     'primary_widget_area' => array('search', 'pages', 'categories', 'archives'),
-    'secondary_widget_area' => array('links', 'meta'));
+    'secondary_widget_area' => array('links', 'meta'),
+    'top_widget_area' => array('search', 'language'));
 if (isset($_GET['activated'])) {
     update_option('sidebars_widgets', $preset_widgets);
 }

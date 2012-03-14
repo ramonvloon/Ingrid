@@ -32,14 +32,13 @@
 
             <?php endwhile; ?>
         <?php endif; ?>
+                <div class="itemhead"></div>
         <?php wp_reset_query(); ?>
         <!-- end content -->
         <!-- 2nd sidebar -->
 
         <!-- end 2nd sidebar -->        
     </div>
-
-
     <div class="ito-sidebar">
 
         <?php get_sidebar(); ?>
