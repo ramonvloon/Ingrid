@@ -4,6 +4,7 @@
 
 <div class="ito-main-content-sidebar">
     <div class="ito-content div-shadow">
+        <div class="content">
         <?php
         if (!is_post_type_archive()) {
             global $wp_query;
@@ -39,10 +40,12 @@
 
         <!-- end 2nd sidebar -->        
     </div>
+    </div>
     <div class="ito-sidebar">
 
         <?php get_sidebar(); ?>
 
     </div>
+    
 </div>
 <?php get_footer(); ?>

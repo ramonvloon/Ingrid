@@ -1,0 +1,21 @@
+.div-shadow {
+	height: 60%;	
+	background-color: #CCCCCC;	
+	
+	-moz-box-shadow: 0 0 7px 5px #CCCCCC;
+	-webkit-box-shadow: 0 0 7px 5px #CCCCCC;
+	box-shadow: 0 0 7px 5px #CCCCCC;
+
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=5,MakeShadow=true,ShadowOpacity=0.30);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=5,MakeShadow=true,ShadowOpacity=0.30)";
+	zoom: 1;	
+	
+}
+.div-shadow .content {	
+	position: relative;
+	margin-top: 7px;
+	margin-left: 9px;
+	width: auto;
+	height: 97%;
+	background-color: #ffffff;	
+}
