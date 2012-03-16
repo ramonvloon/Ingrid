@@ -17,43 +17,39 @@
                             <?php the_content('Read more &raquo;'); ?>
                         </div>
                         <small class="metadata">
-                            <span class="category">Filed under: <?php the_category(', ') ?> <?
-                    if (!is_single())
-                        echo "|";
-                            ?> <?php edit_post_link('Edit', '', ' | '); ?> <?php comments_popup_link('Comment (0)', ' Comment (1)', 'Comments (%)'); ?></span>
+                            <span class="category">Filed under: <?php the_category(', ') ?> <? if (!is_single())
+                        echo "|"; ?> <?php edit_post_link('Edit', '', ' | '); ?> <?php comments_popup_link('Comment (0)', ' Comment (1)', 'Comments (%)'); ?></span>
                             <?php if (function_exists('wp_tag_cloud')) : ?>
                                 <?php the_tags('<span class="tags">Article tags: ', ', ', '</span>'); ?>
-        <?php endif; ?>
+                            <?php endif; ?>
                         </small>
                     </div>
                 </div>
                 <!-- end item -->
 
-                <?php comments_template(); // Get wp-comments.php template    ?>
+                <?php comments_template(); // Get wp-comments.php template  ?>
 
-    <?php endwhile; ?>
+            <?php endwhile; ?>
 
             <div class="navigation">
                 <div class="alignleft"><?php next_posts_link('&laquo; Previous Entries') ?></div>
                 <div class="alignright"><?php previous_posts_link('Next Entries &raquo;') ?></div>
                 <p> </p>
             </div>
-            <div class="itembottom"></div>
-<?php else : ?>
+                <div class="itemhead"></div>
+        <?php else : ?>
 
             <h2 class="center">Not Found</h2>
             <p class="center">Sorry, but you are looking for something that isn't here.</p>
 
-<?php endif; ?>
+        <?php endif; ?>
         <!-- end content -->
-        <!-- 2nd sidebar -->
-
-        <!-- end 2nd sidebar -->
+          
     </div>        
 
     <div class="ito-sidebar">
 
-<?php get_sidebar(); ?>
+        <?php get_sidebar(); ?>
 
     </div>
 </div>

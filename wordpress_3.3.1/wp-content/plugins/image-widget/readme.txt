@@ -1,10 +1,10 @@
 === Image Widget ===
-Contributors: moderntribe, peterchester, mattwiebe, Produced by Modern Tribe, Inc.
+Contributors: ModernTribe, peterchester, mattwiebe, Produced by Modern Tribe, Inc.
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4BSPTNFFY6AL6
 Tags: widget, image, ad, banner, simple, upload, sidebar, admin, thickbox, resize
 Requires at least: 3.0
-Tested up to: 3.3
-Stable tag: 3.3
+Tested up to: 3.3.1
+Stable tag: 3.3.1
 
 == Description ==
 
@@ -25,15 +25,11 @@ This plugin is actively supported and we will do our best to help you. In return
 1. Help Out. If you see a question on the forum you can help with or have a great idea and want to code it up and submit a patch, that would be just plain awesome and we will shower your with praise. Might even be a good way to get to know us and lead to some paid work if you freelance.  Also, we are happy to post translations if you provide them.
 1. Donate - if this is generating enough revenue to support our time it makes all the difference in the world
 https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4BSPTNFFY6AL6
+1. Support us by buying our Premium plugins. In particular, check out our Events Calendar Pro http://tri.be/wordpress-events-calendar-pro/
 
 == Installation ==
 
 = Install =
-
-1. Unzip the `image-widget.zip` file. 
-1. Upload the the `image-widget` folder (not just the files in it!) to your `wp-contents/plugins` folder. If you're using FTP, use 'binary' mode.
-
-= Activate =
 
 1. In your WordPress administration, go to the Plugins page
 1. Activate the Image Widget plugin and a subpage for the plugin will appear
@@ -67,6 +63,11 @@ function my_template_filter($template) {
 }`
 
 == Changelog ==
+
+= 3.3.1 =
+
+* Add minor security updates.
+* Update readme, thumbnails and other minor descriptors.
 
 = 3.3 =
 

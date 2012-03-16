@@ -21,7 +21,7 @@
                         <div class="storycontent">                        
                             <?php the_content(); ?>
                             <div style="text-align:left">
-                                <a href="<?php the_permalink(); ?>">lees meer</a> 
+                            <a href="<?php the_permalink(); ?>">lees meer</a> 
                             </div>
                         </div>
                     </div>                  
@@ -32,7 +32,7 @@
 
             <?php endwhile; ?>
         <?php endif; ?>
-        <div class="itembottom"></div>
+                <div class="itemhead"></div>
         <?php wp_reset_query(); ?>
         <!-- end content -->
         <!-- 2nd sidebar -->

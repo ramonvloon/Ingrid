@@ -2,19 +2,18 @@
     <div class="top-widget">
         <div class="ito-search-language">
             <div class="ito-search">
+                <?php if (is_widget_active('top_widget_area', 'search')) : ?>
+                    <form id="searchform" method="get" action="<?php bloginfo('home'); ?>">
+                        <input type="text" name="s" id="s" value="" size="13" />
+                    </form>
+                <?php endif; ?>
+
                 <?php
-                if (dynamic_sidebar('top_widget_area')) {
-                    if (is_active_widget('polylang')) {
-                        echo "hoi";
-                    }
+                if (is_widget_active('top_widget_area', 'polylang')) {
+                    the_language_menu(array('display_names_as' => 'slug'));
                 }
                 ?>
             </div>
         </div>
     </div>
 <?php endif; ?>
-<!--    <div id="top" class="widget-area">            
-        <ul class="xoxo">                
-<?php dynamic_sidebar('top_widget_area'); ?>            
-        </ul>
-    </div> #secondary .widget-area -->
