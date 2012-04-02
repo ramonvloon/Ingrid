@@ -4,7 +4,6 @@
 
 <div class="ito-main-content-sidebar">
     <div class="ito-content div-shadow">
-        <div class="content">
         <?php
         if (!is_post_type_archive()) {
             global $wp_query;
@@ -33,19 +32,18 @@
 
             <?php endwhile; ?>
         <?php endif; ?>
-                <div class="itemhead"></div>
         <?php wp_reset_query(); ?>
         <!-- end content -->
         <!-- 2nd sidebar -->
 
         <!-- end 2nd sidebar -->        
     </div>
-    </div>
+
+
     <div class="ito-sidebar">
 
         <?php get_sidebar(); ?>
 
     </div>
-    
 </div>
 <?php get_footer(); ?>

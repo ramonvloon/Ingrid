@@ -16,9 +16,6 @@ if(function_exists('language_attributes')) {
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<!--[if IE]>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri() . "/styles/ie.css";  ?>" type="text/css" media="screen" />
-<![endif]-->
 <?php wp_head(); ?>
 </head>
 <body>

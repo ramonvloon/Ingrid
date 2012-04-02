@@ -1,0 +1,28 @@
+#camera_all_meta {
+	display: none;
+	font-family: "HelveticaNeue-Bold","Helvetica Neue Bold","Helvetica Bold",sans-serif;
+}
+#camera_all_meta label {
+	clear: both;
+	display: block;
+	font-size: 14px;
+	margin: 20px 0 10px;
+}
+#camera_all_meta select{
+	background: #fff;
+	border: 3px solid #a1c1c8;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	color: #9d9d9d;
+	font-family: "HelveticaNeue-Bold","Helvetica Neue Bold","Helvetica Bold",sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	height: 52px;
+	line-height: 40px;
+	margin-bottom: 10px;
+	padding: 6px 0;
+	text-indent: 12px;
+	vertical-align: middle;
+	width: 474px;
+}

@@ -1,6 +1,6 @@
 .top-widget {
     width: 100%;
-    height: 30px;
+    height: 60px;
 }
 
 .ito-navset { 
@@ -31,18 +31,19 @@
     margin: 32px 0 0 0;
 }
 
-.ito-search-language {
+.ito-search-laguage {
+    text-align: left;
     float: right;
-    text-align: right;
-    width: 200px;
-    height: 10px;
+    width: 150px; 
+    height: 60px;  
 }
 
 .ito-search input {
-    float: left;    
     background: #fff;
     border: 1px solid #E95E27;
-    width: 100px;
+    width: 120px;
+    margin: 5px 0 0 0; 
+    
 }
 
 .logo {
@@ -65,3 +66,5 @@
 .logo span {
     color: #E92E27;
 }
+    
+

@@ -51,7 +51,6 @@
                         <div class="alignright"><?php previous_posts_link('Next Entries &raquo;') ?></div>
                         <p> </p>
                 </div>
-<div class="itemhead"></div>
  
         <?php else : ?>
  
