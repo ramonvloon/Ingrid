@@ -33,15 +33,13 @@ Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-backgr
 -moz-box-shadow: 0 0 7px 5px #CCCCCC;
 -webkit-box-shadow: 0 0 7px 5px #CCCCCC;
 box-shadow: 0 0 7px 5px #CCCCCC;
-/*Voor IE 8   */
--ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=135, Color='#CCCCCC')";  
-/*Voor IE 5.5 - 7   */
-filter: progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction-135,  Color='#CCCCCC');
 
 
 
-}
-
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#CCCCCC')";  
+ /* Voor IE 5.5 - 7 */  
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#CCCCCC');  
+}  
 
 .metadata{
     line-height: 190%;

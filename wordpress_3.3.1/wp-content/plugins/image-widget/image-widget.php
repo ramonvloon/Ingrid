@@ -4,9 +4,13 @@ Plugin Name: Image Widget
 Plugin URI: http://wordpress.org/extend/plugins/image-widget/
 Description: Simple image widget that uses native Wordpress upload thickbox to add image widgets to your site.
 Author: Modern Tribe, Inc.
-Version: 3.3
-Author URI: http://tri.be/
+Version: 3.3.1
+Author URI: http://tri.be
 */
+
+// Block direct requests
+if ( !defined('ABSPATH') )
+	die('-1');
 
 // Load the widget on widgets_init
 function tribe_load_image_widget() {
@@ -16,8 +20,6 @@ add_action('widgets_init', 'tribe_load_image_widget');
 
 /**
  * Tribe_Image_Widget class
- *
- * @author Shane & Peter, Inc. (Peter Chester)
  **/
 class Tribe_Image_Widget extends WP_Widget {
 
@@ -26,8 +28,7 @@ class Tribe_Image_Widget extends WP_Widget {
 	/**
 	 * SP Image Widget constructor
 	 *
-	 * @return void
-	 * @author Shane & Peter, Inc. (Peter Chester)
+	 * @author Modern Tribe, Inc. (Peter Chester)
 	 */
 	function Tribe_Image_Widget() {
 		$this->loadPluginTextDomain();
@@ -57,8 +58,7 @@ class Tribe_Image_Widget extends WP_Widget {
 
 	function register_scripts_and_styles() {
 		$dir = plugins_url('/', __FILE__);
-		wp_register_script( 'tribe-image-widget', $dir . 'image-widget.js', array('thickbox'), false, true );
-		wp_register_script( 'fix-browser-upload', $dir . 'image-widget-fix-browser-upload.js', array('jquery'), false, true );
+		wp_register_script( 'tribe-image-widget', $dir . 'image-widget.js', array('jquery','thickbox'), false, true );
 	}
 
 	function fix_async_upload_image() {
@@ -79,7 +79,7 @@ class Tribe_Image_Widget extends WP_Widget {
 	 * @param int $width desired width of image (optional)
 	 * @param int $height desired height of image (optional)
 	 * @return string URL
-	 * @author Shane & Peter, Inc. (Peter Chester)
+	 * @author Modern Tribe, Inc. (Peter Chester)
 	 */
 	function get_image_url( $id, $width=false, $height=false ) {
 
@@ -91,10 +91,11 @@ class Tribe_Image_Widget extends WP_Widget {
 			if ($width && $height) {
 				$uploads = wp_upload_dir();
 				$imgpath = $uploads['basedir'].'/'.$attachment['file'];
-				error_log($imgpath);
+				if (WP_DEBUG) {
+					error_log(__CLASS__.'->'.__FUNCTION__.'() $imgpath = '.$imgpath);
+				}
 				$image = image_resize( $imgpath, $width, $height );
 				if ( $image && !is_wp_error( $image ) ) {
-					error_log( is_wp_error($image) );
 					$image = path_join( dirname($attachment_url), basename($image) );
 				} else {
 					$image = $attachment_url;
@@ -111,8 +112,7 @@ class Tribe_Image_Widget extends WP_Widget {
 	/**
 	 * Test context to see if the uploader is being used for the image widget or for other regular uploads
 	 *
-	 * @return void
-	 * @author Shane & Peter, Inc. (Peter Chester)
+	 * @author Modern Tribe, Inc. (Peter Chester)
 	 */
 	function is_sp_widget_context() {
 		if ( isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'],$this->id_base) !== false ) {
@@ -131,8 +131,7 @@ class Tribe_Image_Widget extends WP_Widget {
 	 * @param string $translated_text text that has already been translated (normally passed straight through)
 	 * @param string $source_text text as it is in the code
 	 * @param string $domain domain of the text
-	 * @return void
-	 * @author Shane & Peter, Inc. (Peter Chester)
+	 * @author Modern Tribe, Inc. (Peter Chester)
 	 */
 	function replace_text_in_thickbox($translated_text, $source_text, $domain) {
 		if ( $this->is_sp_widget_context() ) {
@@ -154,7 +153,7 @@ class Tribe_Image_Widget extends WP_Widget {
 	 * @param string $url
 	 * @param array $size
 	 * @return string javascript array of attachment url and id or just the url
-	 * @author Shane & Peter, Inc. (Peter Chester)
+	 * @author Modern Tribe, Inc. (Peter Chester)
 	 */
 	function image_send_to_editor( $html, $id, $caption, $title, $align, $url, $size, $alt = '' ) {
 		// Normally, media uploader return an HTML string (in this case, typically a complete image tag surrounded by a caption).
@@ -166,14 +165,14 @@ class Tribe_Image_Widget extends WP_Widget {
 			<script type="text/javascript">
 				// send image variables back to opener
 				var win = window.dialogArguments || opener || parent || top;
-				win.IW_html = '<?php echo addslashes($html) ?>';
-				win.IW_img_id = '<?php echo $id ?>';
-				win.IW_alt = '<?php echo addslashes($alt) ?>';
-				win.IW_caption = '<?php echo addslashes($caption) ?>';
-				win.IW_title = '<?php echo addslashes($title) ?>';
-				win.IW_align = '<?php echo $align ?>';
-				win.IW_url = '<?php echo $url ?>';
-				win.IW_size = '<?php echo $size ?>';
+				win.IW_html = '<?php echo addslashes($html); ?>';
+				win.IW_img_id = '<?php echo $id; ?>';
+				win.IW_alt = '<?php echo addslashes($alt); ?>';
+				win.IW_caption = '<?php echo addslashes($caption); ?>';
+				win.IW_title = '<?php echo addslashes($title); ?>';
+				win.IW_align = '<?php echo esc_attr($align); ?>';
+				win.IW_url = '<?php echo esc_url($url); ?>';
+				win.IW_size = '<?php echo esc_attr($size); ?>';
 			</script>
 			<?php
 		}
@@ -184,8 +183,7 @@ class Tribe_Image_Widget extends WP_Widget {
 	 * Remove from url tab until that functionality is added to widgets.
 	 *
 	 * @param array $tabs
-	 * @return void
-	 * @author Shane & Peter, Inc. (Peter Chester)
+	 * @author Modern Tribe, Inc. (Peter Chester)
 	 */
 	function media_upload_tabs($tabs) {
 		if ( $this->is_sp_widget_context() ) {
@@ -200,8 +198,7 @@ class Tribe_Image_Widget extends WP_Widget {
 	 *
 	 * @param array $args
 	 * @param array $instance
-	 * @return void
-	 * @author Shane & Peter, Inc. (Peter Chester)
+	 * @author Modern Tribe, Inc. (Peter Chester)
 	 */
 	function widget( $args, $instance ) {
 		extract( $args );
@@ -217,7 +214,7 @@ class Tribe_Image_Widget extends WP_Widget {
 	 * @param object $new_instance Widget Instance
 	 * @param object $old_instance Widget Instance
 	 * @return object
-	 * @author Shane & Peter, Inc. (Peter Chester)
+	 * @author Modern Tribe, Inc. (Peter Chester)
 	 */
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
@@ -248,8 +245,7 @@ class Tribe_Image_Widget extends WP_Widget {
 	 * Form UI
 	 *
 	 * @param object $instance Widget Instance
-	 * @return void
-	 * @author Shane & Peter, Inc. (Peter Chester)
+	 * @author Modern Tribe, Inc. (Peter Chester)
 	 */
 	function form( $instance ) {
 
@@ -271,8 +267,7 @@ class Tribe_Image_Widget extends WP_Widget {
 	/**
 	 * Admin header css
 	 *
-	 * @return void
-	 * @author Shane & Peter, Inc. (Peter Chester)
+	 * @author Modern Tribe, Inc. (Peter Chester)
 	 */
 	function admin_head() {
 		?>

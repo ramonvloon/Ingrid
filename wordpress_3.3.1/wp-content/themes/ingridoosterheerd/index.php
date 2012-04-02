@@ -44,9 +44,7 @@
 
         <?php endif; ?>
         <!-- end content -->
-        <!-- 2nd sidebar -->
-
-        <!-- end 2nd sidebar -->
+          
     </div>        
 
     <div class="ito-sidebar">

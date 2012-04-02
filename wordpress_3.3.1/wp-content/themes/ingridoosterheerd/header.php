@@ -16,10 +16,13 @@ if(function_exists('language_attributes')) {
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+<script src="<?php bloginfo('template_directory');?>/SpryAssets/SprySlidingPanels.js" type="text/javascript"></script>
+<link href="<?php bloginfo('template_directory');?>/SpryAssets/SprySlidingPanels.css" rel="stylesheet" type="text/css" />
 <?php wp_head(); ?>
 </head>
 <body>
 <div class="ito-main-container">
+    
     <!--
 <?php
         $stylesheet_dir_uri = get_stylesheet_directory_uri();

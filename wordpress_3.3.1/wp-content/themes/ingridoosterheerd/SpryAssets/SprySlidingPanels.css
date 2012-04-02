@@ -1,0 +1,35 @@
+#newsTicker {
+    width: 100%;	
+    float: left;
+}
+
+#newsTicker .SlidingPanels {
+    width: 762px;
+    height: 117px;
+}
+
+#newsTicker .SlidingPanelsContentGroup {
+    width: 8000em;
+    float: left;
+}
+
+#newsTicker .SlidingPanelsContent {
+    width: 170px;
+    height: 117px;
+    float: left;    
+}
+
+.SlidingPanelsAnimating * {
+    overflow: hidden !important;
+}
+
+#newsTicker img {
+    float: left;
+    width: 140px;
+}
+
+#newsTicker .content {
+    margin-top: 4px;
+    float: left;
+}
+
